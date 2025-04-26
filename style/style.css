@@ -580,3 +580,164 @@ img {
     font-size: 1.2rem;
   }
 }
+
+#projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--card-shadow);
+}
+
+.project-title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.repo-lang {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.project-links {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.repo-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease,
+    border-color var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
+}
+
+.repo-link:hover,
+.repo-link:focus {
+  transform: translateY(-2px);
+}
+
+
+.github-link {
+  background-color: var(--skill-bar-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.github-link:hover,
+.github-link:focus {
+  background-color: var(--timeline-color);
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.demo-link {
+  background-color: transparent;
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.demo-link:hover,
+.demo-link:focus {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  border-color: var(--accent-primary);
+}
+
+.repo-link:focus-visible {
+  outline: 2px solid var(--accent-primary-darker);
+  outline-offset: 2px;
+}
+
+.github-link:focus-visible {
+  outline-color: var(--accent-primary);
+}
+
+.loading-message,
+.error-message,
+.info-message,
+.warning-message {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  text-align: center;
+}
+
+#projects-grid:empty+.warning-message,
+#projects-grid:empty+.error-message {
+  margin-top: -0.5rem;
+}
+
+
+.loading-message {
+  background-color: var(--skill-bar-bg);
+  color: var(--text-secondary);
+}
+
+.info-message {
+  background-color: var(--bg-secondary);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.warning-message {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: var(--text-primary);
+  border-color: rgba(255, 193, 7, 0.5);
+}
+
+[data-theme="dark"] .warning-message {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #ffdd80;
+  border-color: rgba(255, 193, 7, 0.4);
+}
+
+.error-message {
+  background-color: rgba(220, 53, 69, 0.15);
+  color: #dc3545;
+  border-color: rgba(220, 53, 69, 0.4);
+}
+
+[data-theme="dark"] .error-message {
+  background-color: rgba(248, 102, 119, 0.15);
+  color: #f87a87;
+  border-color: rgba(220, 53, 69, 0.5);
+}
