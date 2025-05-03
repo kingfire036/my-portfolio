@@ -1,6 +1,6 @@
 const GITHUB_USERNAME = 'krupal-036';
 const PROJECT_DETAILS = {
-    'polyglotty-translator-n-speech': {
+    'polyglotty': {
         demoUrl: 'https://polyglotty.vercel.app/'
     },
     // 'krupal-036': {
