@@ -4,18 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Krupal Fataniya - a web development enthusiast with expertise
-        in creating beautiful and functional web applications." />
+    <meta name="description"
+        content="Krupal Fataniya - A web development enthusiast specializing in creating beautiful, functional, and performant web applications." />
     <meta name="keywords"
-        content="Portfolio, Krupal Fataniya, html, javascript, css, react.js, frontend, backend, LLM, GenAI, Computer Engineering, web development" />
+        content="Portfolio, Krupal Fataniya, Web Developer, Frontend, Backend, React, Node, JavaScript, CSS, HTML, Computer Engineering, LLM, GenAI" />
 
-    <title>Krupal Fataniya | Portfolio</title>
-    <link rel="stylesheet" href="style/style.css" />
+    <title>Krupal Fataniya | Web Developer Portfolio</title>
     <link rel="icon" href="https://cdn-icons-png.freepik.com/512/12122/12122983.png" type="image/x-icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js" defer></script>
 </head>
 
 <body>
@@ -27,9 +35,8 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills-education">Education & Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <!-- <li><a href="#resume">Resume</a></li> -->
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -49,180 +56,200 @@
     <nav class="mobile-nav" id="mobile-nav">
         <ul>
             <li><a href="#about" class="mobile-nav-link">About</a></li>
-            <li><a href="#education" class="mobile-nav-link">Education</a></li>
+            <li><a href="#skills-education" class="mobile-nav-link">Education & Skills</a></li>
             <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
-            <!-- <li><a href="#resume" class="mobile-nav-link">Resume</a></li> -->
             <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
         </ul>
     </nav>
 
-    <main>
-        <section id="hero" class="hero-section section full-height">
-            <div class="container hero-content">
-                <h1 id="hero-name">Krupal Fataniya</h1>
-                <p id="hero-title">Tech Enthusiast & Computer Engineering Student</p>
-                <p id="hero-tagline">
-                    Turning coffee into code and ideas into impact.
-                </p>
-                <a href="#projects" class="cta-button anim-button">View My Work</a>
-            </div>
-        </section>
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+            <section id="hero" class="hero-section section full-height">
+                <div id="p5-hero-background"></div>
+                <div class="container hero-content">
+                    <h1 id="hero-name" class="reveal-text">Krupal Fataniya</h1>
+                    <p id="hero-title" class="reveal-text">Tech Enthusiast & Computer Engineering Student</p>
+                    <p id="hero-tagline" class="reveal-text">
+                        Turning coffee into code and ideas into interactive digital experiences.
+                    </p>
+                    <div class="cta-button-wrapper">
+                        <a href="#projects" class="cta-button">View My Work</a>
+                    </div>
+                </div>
+            </section>
 
-        <section id="about" class="section">
-            <div class="container about-container">
-                <h2 class="section-title animate-on-scroll">About Me</h2>
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQEDoFKKJZWfbw/profile-displayphoto-shrink_800_800/B4DZY6J4BvG8Ak-/0/1744732393208?e=1750896000&v=beta&t=9N228PKbKju8-d5DfeaS1ogaxwmyPdAe1TE2-D9_C1k"
-                    alt="Profile Picture Placeholder" style="width: 100%; max-width: 300px; border-radius: 50%" />
-                <div class="about-content">
-                    <div class="about-visual animate-on-scroll fade-in-right"></div>
+            <section id="about" class="section">
+                <div class="container about-container">
+                    <div class="about-visual animate-on-scroll fade-in-right">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEDoFKKJZWfbw/profile-displayphoto-shrink_800_800/B4DZY6J4BvG8Ak-/0/1744732393208?e=1750896000&v=beta&t=9N228PKbKju8-d5DfeaS1ogaxwmyPdAe1TE2-D9_C1k"
+                            alt="Krupal Fataniya profile picture" class="profile-picture" />
+                    </div>
                     <div class="about-text animate-on-scroll fade-in-left">
+                        <h2 class="section-title">About Me</h2>
                         <p>
-                            Hi, I'm Krupal Fataniya, a web development enthusiast with
-                            expertise in creating beautiful and functional web applications.
-                            With a strong foundation in both front-end and back-end
-                            technologies, I focus on delivering seamless user experiences,
-                            optimized performance, and innovative features.I love bringing
-                            ideas to life in the browser.
+                            Hi, I'm Krupal Fataniya, a passionate Computer Engineering student with a strong enthusiasm
+                            for web development. I specialize in creating beautiful, functional, and user-centric web
+                            applications.
+                        </p>
+                        <p>
+                            With a strong foundation in both front-end and back-end technologies, I enjoy tackling
+                            challenges
+                            and continuously learning to build seamless digital experiences, optimize performance, and
+                            implement innovative features. I thrive on bringing ideas to life in the browser.
+                        </p>
+                        <p>
+                            Currently exploring advancements in AI/ML and how they can be integrated into web
+                            applications to create smarter, more intuitive user interactions.
                         </p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="education" class="section">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">Education & Skills</h2>
+            <section id="skills-education" class="section">
+                <div class="container">
+                    <h2 class="section-title animate-on-scroll">Education & Skills</h2>
 
-                <div class="skills-education-grid">
-                    <div class="education-timeline animate-on-scroll">
-                        <h3 class="sub-title">Education</h3>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h3>SAL ENGINEERING AND TECHNICAL INSTITUTE</h3>
-                                <h4>Bachelor of Engineering - BE, Computer Engineering</h4>
-                                <p>2023 - 2026</p>
-                                <p>Key Skills/Courses: Spring Boot, Python Libraries</p>
+                    <div class="skills-education-grid">
+                        <div class="education-timeline animate-on-scroll fade-in-left">
+                            <h3 class="sub-title">Education</h3>
+                            <div class="timeline-line-container">
+                                <div class="timeline-line"></div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h4>SAL Engineering and Technical Institute</h4>
+                                        <h5>Bachelor of Engineering - BE, Computer Engineering</h5>
+                                        <p class="timeline-date">2023 - 2026 (Expected)</p>
+                                        <p>Relevant Coursework: Data Structures, Algorithms, Database Management, Web
+                                            Technologies.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h4>Government Polytechnic Ahmedabad</h4>
+                                        <h5>Diploma in Computer Engineering</h5>
+                                        <p class="timeline-date">Aug 2020 - Sep 2023</p>
+                                        <p>Grade: 7.67 CGPA</p>
+                                        <p>Key Skills Acquired: Programming Fundamentals, Database Concepts, Basic Web
+                                            Development (PHP).</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h3>Government Polytechnic Ahmedabad</h3>
-                                <h4>Diploma in Computer Engineering</h4>
-                                <p>Aug 2020 - Sep 2023</p>
-                                <p>Grade: CGPA - 7.67</p>
-                                <p>Key Skills/Courses: Visual Basic .NET (VB.NET), PHP</p>
+
+                        <div class="skills-list animate-on-scroll fade-in-right">
+                            <h3 class="sub-title">Technical Skills</h3>
+                            <div class="skill-item">
+                                <span class="skill-name">HTML, CSS, JavaScript (ES6+)</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-inner" data-level="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Python (Flask)</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-inner" data-level="75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Version Control (Git, GitHub)</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-inner" data-level="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">LLM-Powered Web Apps</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-inner" data-level="70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Generative AI (Google AI Studio)</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-inner" data-level="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Responsive Web Design</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-inner" data-level="90%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="timeline-line"></div>
+
+
                     </div>
+                </div>
+            </section>
 
-                    <div class="skills-list animate-on-scroll">
-                        <h3 class="sub-title">Skills</h3>
-                        <div class="skill-item">
-                            <span class="skill-name">HTML, CSS, JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-bar-inner" data-level="90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Git | GitHub</span>
-                            <div class="skill-bar">
-                                <div class="skill-bar-inner" data-level="85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Google AI Studio Workflow</span>
-                            <div class="skill-bar">
-                                <div class="skill-bar-inner" data-level="80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">LLM-Powered Web Apps</span>
-                            <div class="skill-bar">
-                                <div class="skill-bar-inner" data-level="85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Python | Flask</span>
-                            <div class="skill-bar">
-                                <div class="skill-bar-inner" data-level="75%"></div>
-                            </div>
-                        </div>
+            <section id="projects" class="section">
+                <div class="container">
+                    <h2 class="section-title animate-on-scroll">My Projects</h2>
+                    <div id="projects-grid" class="projects-grid">
+                        <p class="loading-message">Loading selected projects from GitHub...</p>
+                    </div>
+                    <div id="projects-messages"></div>
+                </div>
+            </section>
+
+            <!-- Resume Section -->
+            <!--
+            <section id="resume" class="section">
+                <div class="container text-center">
+                    <h2 class="section-title animate-on-scroll">My Resume</h2>
+                    <div class="resume-content animate-on-scroll">
+                        <p>
+                            Interested in learning more about my experience? Download my full resume below.
+                        </p>
+                        <a href="assets/krupal_fataniya_resume.pdf" class="cta-button" download="Krupal_Fataniya_Resume.pdf"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-download" style="margin-right: 8px;"></i> Download Resume (PDF)
+                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            -->
 
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">My Projects</h2>
-                <div id="projects-grid" class="projects-grid">
-                    <p class="loading-message">Loading GitHub projects...</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- <section id="resume" class="section">
-            <div class="about-container">
-                <h2 class="section-title animate-on-scroll">My Resume</h2>
-                <div class="about-text resume-content text-center animate-on-scroll">
-                    <p>
-                        Interested in learning more about my experience? Download my full resume below.
+            <section id="contact" class="section">
+                <div class="container contact-container">
+                    <h2 class="section-title animate-on-scroll">Get In Touch</h2>
+                    <p class="text-center animate-on-scroll">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                        visions. Feel free to connect!
                     </p>
-                    <a href="assets/krupal_fataniya_resume.pdf" class="cta-button anim-button" download="resume.pdf"
-                        target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-download" style="margin-right: 8px;"></i> Download Resume (PDF)
-                    </a>
-                    <br>
-                    <p>
-                        Interested in learning more about my experience? Download my full resume below.
-                    </p>
-                    <a href="assets/krupal_fataniya.pdf" class="cta-button anim-button" download="resume.pdf"
-                        target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-download" style="margin-right: 8px;"></i> Download Resume (PDF)
-                    </a>
+                    <div class="social-links animate-on-scroll">
+                        <a href="https://github.com/krupal-036" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub Profile" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/krupal-fataniya/" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn Profile" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/krupal_fataniya/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram Profile" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://codepen.io/Krupal-Fataniya" target="_blank" rel="noopener noreferrer"
+                            aria-label="CodePen Profile" class="social-icon"><i class="fab fa-codepen"></i></a>
+                        <a href="mailto:krupalfataniya007@gmail.com" aria-label="Send Email" class="social-icon"><i
+                                class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
-            </div>
-        </section> -->
+            </section>
 
-        <section id="contact" class="section">
-            <div class="container contact-container">
-                <h2 class="section-title animate-on-scroll">Get In Touch</h2>
-                <div class="social-links animate-on-scroll">
-                    <a href="https://github.com/krupal-036" target="_blank" aria-label="GitHub" class="social-icon"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/krupal-fataniya/" target="_blank" aria-label="LinkedIn"
-                        class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/krupal_fataniya/" target="_blank" aria-label="Instagram"
-                        class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="https://codepen.io/Krupal-Fataniya" target="_blank" aria-label="Codepen"
-                        class="social-icon"><i class="fab fa-codepen"></i></a>
-                    <a href="mailto:krupalfataniya007@gmail.com" target="_blank" aria-label="Gmail"
-                        class="social-icon"><i class="fas fa-envelope"></i></a>
+            <footer class="site-footer">
+                <div class="container">
+                    <p>
+                        © <span id="current-year"></span> Krupal Fataniya. All rights reserved.
+                    </p>
                 </div>
-            </div>
-        </section>
+            </footer>
+
+        </div>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>
-                &copy; <span id="current-year"></span> Krupal Fataniya. All rights
-                reserved.
-            </p>
-        </div>
-    </footer>
+    <script src="script/theme.js" defer></script>
+    <script src="script/p5-sketch.js" defer></script>
+    <script src="script/animations.js" defer></script>
+    <script src="script/api.js" defer></script>
+    <script src="script/main.js" defer></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
-    <script src="script/theme.js"></script>
-    <script src="script/api.js"></script>
-    <script src="script/animations.js"></script>
-    <script src="script/main.js"></script>
 </body>
 
 </html>
