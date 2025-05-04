@@ -114,7 +114,6 @@ function setupScrollAnimations() {
                 }
             }
         );
-        n
         items.forEach((item, index) => {
             gsap.fromTo(item,
                 { opacity: 0, x: -20 },
