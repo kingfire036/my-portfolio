@@ -923,7 +923,7 @@ img {
   .timeline-dot {
     width: 10px;
     height: 10px;
-    left: -5px;
+    left: -10px;
     border-width: 2px;
   }
 
