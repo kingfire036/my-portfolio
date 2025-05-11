@@ -155,7 +155,7 @@ function displayRepos(repos) {
         if (repoConfig && repoConfig.demoUrl) {
             const demoLink = document.createElement('a');
             demoLink.href = repoConfig.demoUrl;
-            demoLink.innerHTML = '<i class="fas fa-external-link-alt"></i> Live Demo';
+            demoLink.innerHTML = 'Live Demo &nbsp; <i class="fas fa-external-link-alt"></i>';
             demoLink.target = '_blank';
             demoLink.rel = 'noopener noreferrer';
             demoLink.classList.add('repo-link', 'demo-link');
