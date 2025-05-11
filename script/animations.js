@@ -62,10 +62,10 @@ function setupHeroAnimation() {
 }
 
 function setupScrollAnimations() {
-
+    // General animate-on-scroll elements (includes new certificate cards if they have the class)
     gsap.utils.toArray('.animate-on-scroll').forEach(element => {
         let xFrom = 0;
-        let yFrom = 50;
+        let yFrom = 50; // Default to fade up
         let rotationFrom = 0;
 
         if (element.classList.contains('fade-in-left')) {
@@ -74,6 +74,10 @@ function setupScrollAnimations() {
         if (element.classList.contains('fade-in-right')) {
             xFrom = 50; yFrom = 0;
         }
+        // Add more specific animations based on classes if needed for certificate cards
+        // For example, if certificate-card had a specific animation class:
+        // if (element.classList.contains('certificate-card-animate')) { yFrom = 30; }
+
 
         gsap.fromTo(element,
             { opacity: 0, y: yFrom, x: xFrom, rotation: rotationFrom },
@@ -86,10 +90,10 @@ function setupScrollAnimations() {
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: element,
-                    start: "top 85%",
+                    start: "top 85%", // Adjust as needed
                     end: "bottom 15%",
                     toggleActions: 'play none none none',
-                    once: true
+                    once: true // Animation plays once
                 }
             }
         );
@@ -174,10 +178,15 @@ function setupProjectCardHover() {
         if (card.dataset.hoverInitialized) return;
         card.dataset.hoverInitialized = true;
 
+        // The new CSS for project-card has its own hover effects (::before pseudo-element)
+        // You might want to keep GSAP for y-transform or scale, or rely solely on CSS.
+        // For this example, I'll keep a subtle GSAP hover effect that complements the CSS.
         const cardTween = gsap.to(card, {
-            y: -8,
-            scale: 1.03,
-            boxShadow: '0 15px 30px var(--card-shadow-hover)',
+            y: -6, // Slightly less y-transform
+            scale: 1.02, // Slightly less scale
+            // boxShadow is now handled by CSS for the glass effect, so removing it here
+            // or making it very subtle if needed.
+            // boxShadow: '0 10px 25px var(--card-shadow-hover)', 
             duration: 0.3,
             ease: 'power1.out',
             paused: true
@@ -187,6 +196,11 @@ function setupProjectCardHover() {
         card.addEventListener('mouseleave', () => cardTween.reverse());
     });
 }
+// Note: No specific GSAP hover for certificate cards is added here, assuming CSS is sufficient.
+// If GSAP hover is desired for .certificate-card, create a similar function: setupCertificateCardHover()
+
+
+let openMenuTl; // Make it accessible globally within this script
 
 function setupMobileMenuAnimation() {
     const menuToggle = document.getElementById('menu-toggle');
@@ -194,7 +208,7 @@ function setupMobileMenuAnimation() {
     const mobileNavLinks = gsap.utils.toArray('.mobile-nav-link');
     const hamburgerLines = gsap.utils.toArray('.hamburger-line');
 
-    const openMenuTl = gsap.timeline({ paused: true, reversed: true });
+    openMenuTl = gsap.timeline({ paused: true, reversed: true }); // Assign to the outer scope variable
     openMenuTl
         .set(mobileNav, { display: 'flex' })
         .to(mobileNav, { x: '0%', duration: 0.4, ease: 'power2.inOut' })
@@ -227,3 +241,20 @@ function setupMobileMenuAnimation() {
         });
     });
 }
+
+// Expose a function to close the mobile menu if needed by other scripts (like main.js for Lenis scroll)
+window.closeMobileMenu = function () {
+    return new Promise((resolve) => {
+        if (openMenuTl && !openMenuTl.reversed()) {
+            openMenuTl.eventCallback("onReverseComplete", () => {
+                gsap.set(document.getElementById('mobile-nav'), { display: 'none' });
+                document.body.classList.remove('no-scroll');
+                openMenuTl.eventCallback("onReverseComplete", null); // Clear callback to prevent multiple calls
+                resolve();
+            });
+            openMenuTl.reverse();
+        } else {
+            resolve(); // Menu already closed or not initialized
+        }
+    });
+};
