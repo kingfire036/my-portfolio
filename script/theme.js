@@ -29,8 +29,10 @@ function applyTheme(theme) {
 function initializeTheme() {
     if (!themeToggleBtn) {
         console.warn("Theme toggle button not found.");
-        const currentTheme = localStorage.getItem('theme');
-        applyTheme(currentTheme ? currentTheme : (prefersDarkScheme.matches ? 'dark' : 'light'));
+        // Apply theme even if button is not found, based on preference/storage
+        const storedTheme = localStorage.getItem('theme');
+        const initialTheme = storedTheme ? storedTheme : (prefersDarkScheme.matches ? 'dark' : 'light');
+        applyTheme(initialTheme);
         return;
     }
 
@@ -43,7 +45,8 @@ function initializeTheme() {
     });
 
     prefersDarkScheme.addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
+        // Only change if no theme is explicitly set by the user via localStorage
+        if (!localStorage.getItem('theme')) { 
             applyTheme(e.matches ? 'dark' : 'light');
         }
     });
